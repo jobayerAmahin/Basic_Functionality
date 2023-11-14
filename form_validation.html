@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Page</title>
+    </head>
+    <body>
+        <form onsubmit="return validate()" method="post">
+            Num 1: <input type="text" name="num1" id="num1" /> <br/>
+            Repeat: <input type="text" name="num2" id="num2" /> <br/>
+            <input type="submit" value="submit" /> <br/>
+        </form>
+        <script>
+            function validate(){
+                var n1=document.getElementById("num1");
+                var n2=document.getElementById("num2");
+                if(n1.value!=0 && n2.value!=0){
+                    if(n1.value==n2.value){
+                        return true;
+                    }
+                }
+                alert("Fields are blank or content is not same");
+                return false;
+            }
+        </script>
+    </body>
+</html>
