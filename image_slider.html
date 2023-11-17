@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Page</title>
+    </head>
+    <body>
+        <button onclick="prev()">Prev</button>
+        <img src="https://unsplash.com/photos/a-hand-reaching-up-into-a-palm-tree-lh1uDwaUPPM" id="slider" width="200 px" height="300 px" />
+        <button onclick="next()">Next</button>
+
+        <script>
+            var images=[
+                'https://unsplash.com/photos/a-group-of-people-sitting-around-a-table-with-drinks-IigBPm2VWUM',
+                'https://unsplash.com/photos/TZT30GJhZYc',
+                'https://unsplash.com/photos/a-large-boat-floating-on-top-of-a-body-of-water-R1eoxzQnJLc',
+                'https://unsplash.com/photos/a-large-room-with-a-flag-hanging-from-the-ceiling--HMtL1397P8'
+            ]
+            var num=0;
+            function next(){
+                var slider=document.getElementById("slider");
+                num++;
+                if(num>=images.length){
+                    num=0;
+                }
+                slider.src=images[num];
+            }
+            function prev(){
+                var slider=document.getElementById("slider");
+                num--;
+                if(num<0){
+                    num=images.length-1;
+                }
+                slider.src=images[num];
+            }
+        </script>
+    </body>
+</html>
